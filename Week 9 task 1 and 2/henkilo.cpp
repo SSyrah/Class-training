@@ -8,7 +8,7 @@
 
 henkilo::henkilo() : nimi("---"), ika(0)
 {
-	std::cout << "Luodaan parametriton rakentaja" << std::endl;
+	std::cout << "Luodaan henkilo-luokan parametriton rakentaja" << std::endl;
 }
 
 henkilo::henkilo(const std::string& aNimi, const int& aIka) : nimi(aNimi), ika(aIka)
@@ -35,8 +35,8 @@ henkilo::~henkilo()
 
 void henkilo::kysyTiedot()
 {
-	std::cin.clear();
-	std::cin.ignore(80, '\n');
+	/* std::cin.clear();
+	std::cin.ignore(80, '\n'); */
 	std::cout << "Tervetuloa kayttamaan ohjelmaa!" << std::endl;
 	std::cout << "Anna nimi ";
 	std::getline(std::cin, nimi);

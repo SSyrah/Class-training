@@ -4,58 +4,14 @@
 #include "Osoite.h"
 #include "Kalenterimerkinta.h"
 #include <vector>
+#include "Opettaja.h"
 
-
-
-void doSomethingArvoparametri (Kalenterimerkinta aKalenterimerkinta)
-{
-	aKalenterimerkinta.setAsia("ei tapahtumia");
-	aKalenterimerkinta.tulostaKalenterimerkinta();
-	return;
-}
-
-void doSomethingViittausParametri (Kalenterimerkinta& aKalenterimerkinta)
-{
-	aKalenterimerkinta.setAsia("tanaan tapahtuu vaikka mita!");
-	aKalenterimerkinta.tulostaKalenterimerkinta();
-}
-
-void doSomethingViittausParametri(const Kalenterimerkinta& aKalenterimerkinta)
-{
-	// T‰m‰ funktio ei voi muuttaa tuodun olion sis‰ist‰ tilaa mitenk‰‰n, voi vain tulostaa jne
-	// Funktio voi kutsua VAIN sellaisia metodeja, joilla ei voi muuttaa arvoja.
-	// 
-	// aKalenterimerkinta.setAsia("tanaan tapahtuu vaikka mita!");		<--- EI onnistu
-	aKalenterimerkinta.tulostaKalenterimerkinta();						// <--- onnistuu 
-}
 int main() {
 	
 	/*
-	
-	Kalenterimerkinta merkinta;
-	merkinta.kysyTiedot();
-	merkinta.tulostaKalenterimerkinta();
-
-	// tehdaan kopio merkinta - > nyt - olioon, jossa asetetaan uusi p‰ivays ////
-	/////////////////////////////////////////////////////////////////////////////
-	Kalenterimerkinta nyt(merkinta);
-	nyt.tulostaKalenterimerkinta();
-	
-	// vied‰‰n merkinta-olio aliohjelmiin
-	// aliohjelma kopioi koko olion aliohjelmaan, tekee sille jotain, tuhoaa sen. P‰‰ohjelmassa
-	// pysyyy alkuper‰inen olio muuttumattomana (kuluttaa muistia)
-	doSomethingArvoparametri(merkinta);
-	merkinta.tulostaKalenterimerkinta();
-
-	// Kyseinen funktio muuttaa myˆs p‰‰ohjelmasta viedyn olion arvoja, jotka tulostuvat
-	// p‰‰ohjelmassa
-	doSomethingViittausParametri(merkinta);
-	merkinta.tulostaKalenterimerkinta();
-
-	*/
-		/////////////////////////////////////////////////////////////////////////
-		//		Luodaan henkilo - vektori
-		/////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////
+	//		Luodaan henkilo - vektori									/////
+	/////////////////////////////////////////////////////////////////////////
 
 	henkilo tyyppi;
 	std::vector<henkilo*> lista;
@@ -106,10 +62,21 @@ int main() {
 		else
 			operand = false;
 	} while (operand);
+	*/
+
+	Opettaja ope;
+	ope.setKoulutusala("Tietotekniikka");
+	ope.lisaaKurssi();
+	ope.lisaaKurssi();
+	ope.tulostaOpettajanTiedot();
+	ope.poistaKurssi();
+	ope.tulostaOpettajanTiedot();
+
 
 	std::cout << std::endl << std::endl;
 	std::cout << "Ohjelma paattynyt" << std::endl;
 
+	
 
 
 return 0;

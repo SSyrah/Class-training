@@ -143,6 +143,8 @@
     <ClCompile Include="Kalenterimerkinta.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="noppa.cpp" />
+    <ClCompile Include="Opettaja.cpp" />
+    <ClCompile Include="Opiskelija.cpp" />
     <ClCompile Include="Osoite.cpp" />
     <ClCompile Include="paivays.cpp" />
   </ItemGroup>
@@ -150,6 +152,8 @@
     <ClInclude Include="henkilo.h" />
     <ClInclude Include="Kalenterimerkinta.h" />
     <ClInclude Include="noppa.h" />
+    <ClInclude Include="Opettaja.h" />
+    <ClInclude Include="Opiskelija.h" />
     <ClInclude Include="Osoite.h" />
     <ClInclude Include="paivays.h" />
   </ItemGroup>
