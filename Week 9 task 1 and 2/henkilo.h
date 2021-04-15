@@ -42,3 +42,4 @@ private:
 	Osoite osoite;
 };
 
+void cinClear();

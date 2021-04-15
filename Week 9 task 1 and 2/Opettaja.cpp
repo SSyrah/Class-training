@@ -1,5 +1,6 @@
 #include "Opettaja.h"
 
+// rakentajat
 
 Opettaja::Opettaja()
 {
@@ -8,15 +9,24 @@ Opettaja::Opettaja()
 }
 
 Opettaja::Opettaja(const std::string& aNimi, const int& aIka, const Osoite& aOsoite, const std::string& aKoulutusala)
-	: henkilo (aNimi, aIka, aOsoite), koulutusala (aKoulutusala)
+	: henkilo(aNimi, aIka, aOsoite), koulutusala(aKoulutusala)
 {
 	std::cout << "Opettaja parametrillinen rakentaja luotu." << std::endl;
 }
 
+Opettaja::Opettaja(const Opettaja& aOpettaja)
+	: koulutusala(aOpettaja.koulutusala), kurssit(aOpettaja.kurssit), henkilo(aOpettaja.getNimi(), aOpettaja.getIka(), aOpettaja.getOsoite())
+{
+	std::cout << "Opettaja-luokan kopiorakentaja luotu" << std::endl;
+}
+
+// purkaja
 Opettaja::~Opettaja()
 {
 	std::cout << "Opettaja-luokan purkaja aktivoitu" << std::endl;
 }
+
+// funktiot 
 
 void Opettaja::setKoulutusala(const std::string& aKoulutusala)
 {
@@ -28,20 +38,18 @@ std::string Opettaja::getKoulutusala() const
 	return koulutusala;
 }
 
-void Opettaja::lisaaKurssi()
+void Opettaja::setKurssi()
 {
 	std::string syote;
 	std::cout << "Minka kurssin haluat lisata? Syota kurssi: " << std::endl;
 	std::getline(std::cin, syote);
-	std::cin.clear();
-	std::cin.ignore(60, '\n');
 	kurssit.push_back(syote);
-	std::cin.clear();
 }
+// kurssin poisto pienellä virheentarkistuksella
 
 void Opettaja::poistaKurssi()
 {
-	std::cin.clear();
+	cinClear();
 	bool operand = false;
 	std::cout << std::endl;
 	int index = 0;
@@ -65,11 +73,17 @@ void Opettaja::poistaKurssi()
 
 void Opettaja::tulostaOpettajanTiedot() const
 {
+	std::cout << std::endl;
+	std::cout << std::endl;
 	std::cout << "Tulostetaan opettajan tiedot: " << std::endl;
-	tulostaHenkilonTiedot();
+	std::cout << "Nimi: " << getNimi() << std::endl;
+	std::cout << "Ika: " << getIka() << std::endl;
+	std::cout << "Osoite: ";
+	getOsoite().tulostaTiedot();
 	std::cout << "Koulutusala: " << getKoulutusala() << std::endl;
 	std::cout << "Kurssit: ";
 	for (int i = 0; i < kurssit.size(); i++) {
 		std::cout << kurssit[i] << "/";
 	}
+	std::cout << std::endl;
 }

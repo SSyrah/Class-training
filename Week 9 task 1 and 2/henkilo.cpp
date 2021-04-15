@@ -35,10 +35,9 @@ henkilo::~henkilo()
 
 void henkilo::kysyTiedot()
 {
-	/* std::cin.clear();
-	std::cin.ignore(80, '\n'); */
+	std::cout<< std::endl;
 	std::cout << "Tervetuloa kayttamaan ohjelmaa!" << std::endl;
-	std::cout << "Anna nimi ";
+	std::cout << "Anna nimi: ";
 	std::getline(std::cin, nimi);
 	std::cout << "Anna ika: ";
 	std::cin >> ika;
@@ -68,7 +67,8 @@ std::string henkilo::getNimi() const
 
 void henkilo::tulostaHenkilonTiedot() const
 {
-	std::cout << "Henkilon tiedot" << std::endl;
+	std::cout << std::endl;
+	std::cout << "Henkilon tiedot: " << std::endl;
 	std::cout << "Nimi: " << nimi << std::endl;
 	std::cout << "Ika: " << ika << std::endl;
 	osoite.tulostaTiedot();
@@ -81,7 +81,7 @@ void henkilo::kasva()
 
 Osoite henkilo::getOsoite() const
 {
-	return Osoite();
+	return osoite;
 }
 
 void henkilo::setOsoite(const Osoite& aOsoite)
@@ -89,3 +89,8 @@ void henkilo::setOsoite(const Osoite& aOsoite)
 	osoite = aOsoite;
 }
 
+void cinClear()
+{
+	std::cin.clear();
+	std::cin.ignore(100, '\n');
+}

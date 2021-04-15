@@ -1,19 +1,22 @@
 #pragma once
 #include "henkilo.h"
+
 class Opiskelija : public henkilo
 {
 public:
 	
 	Opiskelija();
-	Opiskelija(const std::string aNimi, const int& aIka, const Osoite& aOsoite, const std::vector<std::string> aKurssit, const int& pisteet);
+	Opiskelija(const std::string aNimi, const int& aIka, const Osoite& aOsoite,  const int& aOpintopisteet);
+	Opiskelija(const Opiskelija& aOpiskelija);
 	~Opiskelija();
 
 	void setOpintopisteet();
 	void setKurssi();
-	int getPisteet();
+	int getPisteet() const;
+	std::vector<std::string> getKurssit() const;
 	void poistaKurssi();
 	void poistaPisteita();
-	void tulostaOpiskelijanTiedot();
+	void tulostaOpiskelijanTiedot() const;
 
 private:
 

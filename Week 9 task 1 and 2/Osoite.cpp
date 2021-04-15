@@ -58,6 +58,7 @@ void Osoite::tulostaTiedot() const
 void Osoite::kysyOsoitetiedot()
 {
     std::cin.clear();
+    std::cout << std::endl;
     std::cout <<"Kerro osoitteesi: ";
     std::getline(std::cin, katuosoite);
     std::cin.clear();
