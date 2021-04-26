@@ -27,7 +27,7 @@ public:
 	void setIka(const int& aIka);
 	int getIka() const;
 	std::string getNimi() const;
-	/* virtual */  void tulostaTiedot() const;
+	virtual  void tulostaTiedot() const;
 	void kasva();
 
 	Osoite getOsoite() const;

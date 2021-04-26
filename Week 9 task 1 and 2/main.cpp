@@ -76,18 +76,18 @@ int main() {
 	ika = 100;																			<----- onnistuu kun henkilo-luokassa muutetaan protectediksi, muutoin ei anna muuttaa nimeä 
 	nimi = "Mikko";																		   (Tässä testattu Opiskelija-luokan rakentajassa asiaa)
 }
-	*/
+	
 
-	//////////////////////////////////////////////////
-	//// Tehtävä 2-4 ///////////////////////////////
-
+	////////////////////////////////////
+	//// Tehtävä 2-4 /////////////////
+	///////////////////////////////////
 	Koulu tamk;
 	tamk.setOpiskelija();
 	tamk.setOpettaja();
 	tamk.tulostaOpiskelija();
 	tamk.tulostaOpettaja();
 	tamk.tulostaKoulunTiedot();
-
+	*/
 	////////////////////////////////////////
 	///// Tehtävä 5 ///////////////////////
 	////////////////////////////////////////
@@ -96,14 +96,15 @@ int main() {
 	henkilo tyyppi;
 	Opettaja ope;
 	Opiskelija studentti;
+	tyyppi.kysyTiedot();
 	lista.push_back(new henkilo(tyyppi));
 	lista.push_back(new Opettaja(ope));
 	lista.push_back(new Opiskelija(studentti));
-
-
-
-
-
+	// kun virtual lisäparametri on annettu henkilo-luokan tulostin-metodille, Opettaja/Opiskelija - luokan oliot käyttävät omia tulostusmetodeitaan,
+	// ilman sitä kaikki käyttävät vain henkilo-luokan tulostusmetodia
+	for (henkilo* h : lista) {
+		h->tulostaTiedot();
+	}
 
 return 0;
 }
