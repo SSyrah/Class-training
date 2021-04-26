@@ -94,12 +94,12 @@ int main() {
 
 	std::vector<henkilo*> lista;
 	henkilo tyyppi;
-	Opettaja ope;
-	Opiskelija studentti;
+	//Opettaja ope;
+	//Opiskelija studentti;
 	tyyppi.kysyTiedot();
 	lista.push_back(new henkilo(tyyppi));
-	lista.push_back(new Opettaja(ope));
-	lista.push_back(new Opiskelija(studentti));
+	//lista.push_back(new Opettaja(ope));
+	//lista.push_back(new Opiskelija(studentti));
 	// kun virtual lisäparametri on annettu henkilo-luokan tulostin-metodille, Opettaja/Opiskelija - luokan oliot käyttävät omia tulostusmetodeitaan,
 	// ilman sitä kaikki käyttävät vain henkilo-luokan tulostusmetodia
 	for (henkilo* h : lista) {

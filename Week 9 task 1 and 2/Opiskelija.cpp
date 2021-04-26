@@ -43,9 +43,17 @@ void Opiskelija::setOpintopisteet()
 void Opiskelija::setKurssi()
 {
 	std::string syote;
-	std::cout << "Minka kurssin haluat lisata? Syota kurssi: " << std::endl;
+	std::cout << "Haluatko lisata kurssin (k/e K/E)?";
 	std::getline(std::cin, syote);
-	kurssit.push_back(syote);
+	if (syote == "k" || syote == "K") {
+		syote = "";
+		std::cout << "Minka kurssin haluat lisata? Syota kurssi: " << std::endl;
+		std::getline(std::cin, syote);
+		kurssit.push_back(syote);
+	}
+	else {
+		std::cout << "Kursseja ei syotetty ollenkaan." << std::endl;
+	}
 }
 
 int Opiskelija::getPisteet() const

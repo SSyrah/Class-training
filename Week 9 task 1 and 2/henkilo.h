@@ -17,7 +17,7 @@ public:
 	henkilo(const std::string& aNimi, const int& aIka);
 	henkilo(const std::string& aNimi, const int& aIka, const Osoite& aOsoite);
 	//Copy Constructor
-	henkilo(const henkilo& aHenkilo);
+	henkilo(const henkilo& aHenkilo, const Osoite& aOsoite);
 
 	//Destructors:
 	~henkilo();

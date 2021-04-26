@@ -22,8 +22,8 @@ henkilo::henkilo(const std::string& aNimi, const int& aIka, const Osoite& aOsoit
 	std::cout << "henkilo-rakentaja osoite-luokan kanssa aktivoitu" << std::endl;
 }
 
-henkilo::henkilo(const henkilo& aHenkilo)
-	:nimi(aHenkilo.nimi),ika(aHenkilo.ika)
+henkilo::henkilo(const henkilo& aHenkilo, const Osoite& aOsoite)
+	:nimi(aHenkilo.nimi),ika(aHenkilo.ika), osoite(aOsoite)
 {
 	std::cout << "Henkilo-luokan kopiorakentaja aktivoitu" << std::endl;
 }
@@ -68,9 +68,9 @@ void henkilo::tulostaTiedot() const
 {
 	std::cout << std::endl;
 	std::cout << "Henkilon tiedot: " << std::endl;
-	std::cout << "Nimi: " << nimi << std::endl;
-	std::cout << "Ika: " << ika << std::endl;
-	osoite.tulostaTiedot();
+	std::cout << "Nimi: " << getNimi() << std::endl;
+	std::cout << "Ika: " << getIka() << std::endl;
+	getOsoite().tulostaTiedot();
 }
 
 void henkilo::kasva()
