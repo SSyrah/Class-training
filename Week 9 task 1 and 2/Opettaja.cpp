@@ -45,6 +45,7 @@ void Opettaja::setKurssi()
 	std::getline(std::cin, syote);
 	kurssit.push_back(syote);
 }
+
 // kurssin poisto pienellä virheentarkistuksella
 
 void Opettaja::poistaKurssi()
@@ -71,11 +72,10 @@ void Opettaja::poistaKurssi()
 		std::cout << "Ei loytynyt poistettavaa kurssia." << std::endl;
 }
 
-void Opettaja::tulostaOpettajanTiedot() const
+void Opettaja::tulostaTiedot() const
 {
 	std::cout << std::endl;
-	std::cout << std::endl;
-	std::cout << "Tulostetaan opettajan tiedot: " << std::endl;
+	std::cout << "Tulostetaan opettajan tiedot: " << std::endl << std::endl;
 	std::cout << "Nimi: " << getNimi() << std::endl;
 	std::cout << "Ika: " << getIka() << std::endl;
 	std::cout << "Osoite: ";
@@ -85,5 +85,5 @@ void Opettaja::tulostaOpettajanTiedot() const
 	for (int i = 0; i < kurssit.size(); i++) {
 		std::cout << kurssit[i] << "/";
 	}
-	std::cout << std::endl;
+	std::cout << std::endl<<std::endl;
 }

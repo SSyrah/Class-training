@@ -39,6 +39,9 @@
     <ClCompile Include="Opiskelija.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Koulu.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="paivays.h">
@@ -60,6 +63,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Opiskelija.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Koulu.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

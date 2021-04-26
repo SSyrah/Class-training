@@ -12,7 +12,7 @@ public:
 	std::string getKoulutusala() const;
 	void setKurssi();
 	void poistaKurssi();
-	void tulostaOpettajanTiedot() const;
+	void tulostaTiedot() const;
 
 private:
 	std::string koulutusala;

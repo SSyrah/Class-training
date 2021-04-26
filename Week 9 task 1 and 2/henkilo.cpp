@@ -36,7 +36,6 @@ henkilo::~henkilo()
 void henkilo::kysyTiedot()
 {
 	std::cout<< std::endl;
-	std::cout << "Tervetuloa kayttamaan ohjelmaa!" << std::endl;
 	std::cout << "Anna nimi: ";
 	std::getline(std::cin, nimi);
 	std::cout << "Anna ika: ";
@@ -65,7 +64,7 @@ std::string henkilo::getNimi() const
 	return nimi;
 }
 
-void henkilo::tulostaHenkilonTiedot() const
+void henkilo::tulostaTiedot() const
 {
 	std::cout << std::endl;
 	std::cout << "Henkilon tiedot: " << std::endl;

@@ -7,7 +7,7 @@ Opiskelija::Opiskelija() : opintopisteet (0)
 	kysyTiedot();
 }
 
-Opiskelija::Opiskelija(const std::string aNimi, const int& aIka, const Osoite& aOsoite, const int& aOpintopisteet)
+Opiskelija::Opiskelija(const std::string& aNimi, const int& aIka, const Osoite& aOsoite, const int& aOpintopisteet)
 	: henkilo (aNimi, aIka, aOsoite), opintopisteet(aOpintopisteet)
 {
 	std::cout << "Opiskelija-luokan parametrillinen rakentaja luotu." << std::endl;
@@ -96,9 +96,10 @@ void Opiskelija::poistaPisteita()
 	opintopisteet -= (temp * 3);
 }
 
-void Opiskelija::tulostaOpiskelijanTiedot() const
+void Opiskelija::tulostaTiedot() const
 {
-	std::cout << "Tulostetaan opiskelijan tiedot: " << std::endl;
+	std::cout << std::endl;
+	std::cout << "Tulostetaan opiskelijan tiedot: " << std::endl <<std::endl;
 	std::cout << "Ika: " << getIka() << std::endl;
 	std::cout << "Nimi: " << getNimi() << std::endl;
 	std::cout << "Osoite: ";
@@ -108,7 +109,7 @@ void Opiskelija::tulostaOpiskelijanTiedot() const
 	for (int i = 0; i < kurssit.size(); i++) {
 		std::cout << kurssit[i] << " / ";
 	}
-	std::cout << std::endl;
+	std::cout << std::endl << std::endl;
 }
 
 

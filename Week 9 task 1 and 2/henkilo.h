@@ -2,6 +2,7 @@
 #include <iostream>
 #include <vector>
 #include <string>
+#include <iomanip>
 #include "Osoite.h"
 
 
@@ -26,7 +27,7 @@ public:
 	void setIka(const int& aIka);
 	int getIka() const;
 	std::string getNimi() const;
-	void tulostaHenkilonTiedot() const;
+	/* virtual */  void tulostaTiedot() const;
 	void kasva();
 
 	Osoite getOsoite() const;

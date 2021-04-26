@@ -6,6 +6,7 @@
 #include <vector>
 #include "Opettaja.h"
 #include "Opiskelija.h"
+#include "Koulu.h"
 
 int main() {
 	
@@ -18,8 +19,7 @@ int main() {
 	std::vector<henkilo*> lista;
 	int valikko = 0;
 	bool operand = true;
-	
-	do {
+		do {
 		std::cout << "Valitse vaihtoehto:" << std::endl;
 		std::cout << "1 = Lisaa henkilo 2 = Tulosta henkilot 3 = Poista kayttajat 4 = Poista tietty kayttaja" << std::endl;
 		std::cout << "Valintasi: ";
@@ -63,75 +63,45 @@ int main() {
 		else
 			operand = false;
 	} while (operand);
-	
-	////////////////////////
-	// Tehtävät 1-3 ///////
-	/////////////////////// 
-	// luodaan Opettaja-olio
-	Opettaja ope;
-	ope.setKoulutusala("Tietotekniikka");
-	ope.lisaaKurssi();
-	ope.lisaaKurssi();
-	ope.tulostaOpettajanTiedot();
-	//poistetaan kurssi, tutkitaan samalla onko syötettyä kurssia olemassa
-	ope.poistaKurssi();
-	//tulostetaan tiedot poiston jälkeen
-	ope.tulostaOpettajanTiedot();
-	
-	///////////////////////////////////
-	// Testataan opiskelija-luokkaa////
-
-	Opiskelija jantteri;
-	jantteri.setKurssi();
-	jantteri.setKurssi();
-	jantteri.setOpintopisteet();
-	jantteri.poistaKurssi();
-	jantteri.poistaPisteita();
-	jantteri.tulostaOpiskelijanTiedot();
-
-	std::cout << std::endl << std::endl;
-	std::cout << "Ohjelma paattynyt" << std::endl;
-	
-
-	///////////////////////////////////////////////
-	//// Tehtävä 4///////////////////////////////
-
-	Opettaja ope1;
-	ope1.setKurssi();
-	ope1.setKoulutusala("Matematiikka");
-	Opettaja ope2("Markku", 34, Osoite("Korkokuja 12", "46786", "Mantta"), "Tietotekniikka");
-	Opettaja ope3(ope1);
-	ope1.tulostaOpettajanTiedot();
-	// tulostaa kopion ope1:stä
-	ope3.tulostaOpettajanTiedot();
-	ope2.tulostaOpettajanTiedot();
-
-	Opiskelija opiskelija1;
-	Opiskelija opiskelija2("Mikko Mallikas", 23, Osoite("Muurikatu 12", "45670", "Lahti"), 12);
-	Opiskelija opiskelija3(opiskelija1);
-	opiskelija1.tulostaOpiskelijanTiedot();
-	opiskelija2.tulostaOpiskelijanTiedot();
-	opiskelija3.tulostaOpiskelijanTiedot();
-
 	*/
+
+	////////////////////////
+	// Tehtävät 1 ////////
+	/////////////////////// 
+	/*
+	Opiskelija::Opiskelija(const std::string aNimi, const int& aIka, const Osoite& aOsoite, const int& aOpintopisteet)
+	: henkilo (aNimi, aIka, aOsoite), opintopisteet(aOpintopisteet)
+{
+	std::cout << "Opiskelija-luokan parametrillinen rakentaja luotu." << std::endl;
+	ika = 100;																			<----- onnistuu kun henkilo-luokassa muutetaan protectediksi, muutoin ei anna muuttaa nimeä 
+	nimi = "Mikko";																		   (Tässä testattu Opiskelija-luokan rakentajassa asiaa)
+}
+	*/
+
+	//////////////////////////////////////////////////
+	//// Tehtävä 2-4 ///////////////////////////////
+
+	Koulu tamk;
+	tamk.setOpiskelija();
+	tamk.setOpettaja();
+	tamk.tulostaOpiskelija();
+	tamk.tulostaOpettaja();
+	tamk.tulostaKoulunTiedot();
 
 	////////////////////////////////////////
 	///// Tehtävä 5 ///////////////////////
 	////////////////////////////////////////
 
-	std::vector<henkilo*> tyypit;
+	std::vector<henkilo*> lista;
+	henkilo tyyppi;
+	Opettaja ope;
+	Opiskelija studentti;
+	lista.push_back(new henkilo(tyyppi));
+	lista.push_back(new Opettaja(ope));
+	lista.push_back(new Opiskelija(studentti));
 
-	tyypit.push_back(new (Opiskelija));
-	tyypit.push_back(new(Opettaja));
-	tyypit.push_back(new(henkilo));
 
 
-	// kysyy kaksi kertaa ylimaaraista, koska Opettaja ja Opiskelija - oletusrakentajiin on implementoitu kysyTiedot() - metodi.
-
-	for (henkilo* x : tyypit) {
-		x->kysyTiedot();
-		x->tulostaHenkilonTiedot();
-	}
 
 
 
